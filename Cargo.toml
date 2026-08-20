@@ -1,0 +1,8 @@
+[package]
+name = "file-reader"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+walkdir = "2.5"
+ignore = "0.4"
