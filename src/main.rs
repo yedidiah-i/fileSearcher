@@ -57,9 +57,9 @@ fn file_search(config: &Config) -> Result<(), Box<dyn Error>>{
             if let Ok(entry) = result{
                 if let Some(file_name) = entry.file_name().to_str() {
                     let is_match = if ignore_case {
-                        file_name.to_lowercase() == target_file.to_lowercase()
+                        file_name.to_lowercase().contains(&target_file.to_lowercase())
                     } else {
-                        file_name == target_file
+                        file_name.contains(&target_file)
                     };
                     if is_match {
                         println!("[FOUND]: {}", entry.path().display());
