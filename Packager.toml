@@ -1,0 +1,16 @@
+[package]
+product_name = "IRISHYURA Yedidiah"
+version = "0.1.0"
+description = "This app searches for a file in your whole PC in mere milliseconds"
+authors = ["IRISHYURA Yedidiah"]
+
+# Tell it to generate a Windows Installer (NSIS or MSI)
+formats = ["nsis","dmg","deb","appimage"] 
+
+[[bin]]
+name = "seachfile"
+main = true
+
+[nsis]
+# This line creates the "All Users" vs "Just Me" box!
+display_installer_mode = "ForceChoice" 

@@ -1,0 +1,50 @@
+name: Build Cross-Platform Installers
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build Installer on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: windows-latest
+          - os: macos-latest
+          - os: ubuntu-latest
+
+    steps:
+      - name: Checkout Source Code
+        uses: actions/checkout@v4
+
+      - name: Install Rust Toolchain
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Cache Rust Dependencies
+        uses: swatinem/rust-cache@v2
+
+      - name: Install Linux System Dependencies
+        if: matrix.os == 'ubuntu-latest'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -p -y libgtk-3-dev libsoup2.4-dev libwebkit2gtk-4.0-dev
+
+      - name: Install Cargo Packager CLI
+        run: cargo install cargo-packager --locked
+
+      - name: Package Application
+        run: cargo packager --release
+
+      - name: Upload Installer Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: installers-${{ matrix.os }}
+          path: |
+            target/packager/*.exe
+            target/packager/*.dmg
+            target/packager/*.deb
+            target/packager/*.AppImage
