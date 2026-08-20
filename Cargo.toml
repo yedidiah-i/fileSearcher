@@ -6,3 +6,4 @@ edition = "2024"
 [dependencies]
 walkdir = "2.5"
 ignore = "0.4"
+sysinfo ="0.30"
