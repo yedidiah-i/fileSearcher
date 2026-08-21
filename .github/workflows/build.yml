@@ -37,15 +37,14 @@ jobs:
       - name: Install Cargo Packager CLI
         run: cargo install cargo-packager --locked
 
-      # FIX: Compile the Rust application first so the binary actually exists!
-            # This compiles the binary on the native machine host
-            # 1. First, cleanly compile the native binary artifacts
+            # 1. Compile the native binary artifacts
       - name: Build Release Binary
         run: cargo build --release
 
-      # 2. Package it using the official crate package filter flag
+      # 2. Package it using the official plural packages flag
       - name: Package Application
-        run: cargo packager --release --package searchfile
+        run: cargo packager --release --packages file-reader
+
 
 
       - name: Upload Installer Artifacts
