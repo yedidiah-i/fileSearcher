@@ -15,7 +15,7 @@ description = "My Rust Application"
 authors = ["Your Name"]
 formats = ["nsis", "dmg", "deb", "appimage"]
 
-[[package.metadata.packager.bin]]
+[[package.metadata.packager.binaries]]
 name = "your_program_name"
 main = true
 
