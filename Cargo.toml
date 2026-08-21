@@ -9,15 +9,11 @@ ignore = "0.4"
 sysinfo ="0.30"
 
 [package.metadata.packager]
-product_name = "File Reader"
+product_name = "searchfile"
 version = "0.1.0"
 description = "This app searches for a file in your whole PC in mere milliseconds"
 authors = ["IRISHYURA Yedidiah"]
 formats = ["nsis", "dmg", "deb", "appimage"]
-
-[[package.metadata.packager.binaries]]
-name = "searchfile"
-main = true
 
 [package.metadata.packager.nsis]
 display_installer_mode = "ForceChoice"
