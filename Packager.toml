@@ -12,4 +12,4 @@ name = "seachfile"
 main = true
 
 [nsis]
-display_installer_mode = "ForceChoice" 
+installer_mode = "both" 

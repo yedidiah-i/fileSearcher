@@ -39,12 +39,14 @@ jobs:
 
       # FIX: Compile the Rust application first so the binary actually exists!
             # This compiles the binary on the native machine host
+            # 1. First, cleanly compile the native binary artifacts
       - name: Build Release Binary
         run: cargo build --release
 
-      # This runs the packager by explicitly binding your clean binary name
+      # 2. Package it using the official crate package filter flag
       - name: Package Application
-        run: cargo packager --release --bin searchfile
+        run: cargo packager --release --package searchfile
+
 
       - name: Upload Installer Artifacts
         uses: actions/upload-artifact@v4
