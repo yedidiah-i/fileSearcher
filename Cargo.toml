@@ -15,5 +15,8 @@ description = "This app searches for a file in your whole PC in mere millisecond
 authors = ["IRISHYURA Yedidiah"]
 formats = ["nsis", "dmg", "deb", "appimage"]
 
+[[package.metadata.packager.binaries]]
+main = true
+
 [package.metadata.packager.nsis]
 installer_mode = "both"
