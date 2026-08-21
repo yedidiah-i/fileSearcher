@@ -47,15 +47,15 @@ jobs:
       # FIX: Force the packager to save installers into a specific "dist" folder
       - name: Package Application (Windows)
         if: matrix.os == 'windows-latest'
-        run: cargo packager --release --packages file-reader --formats nsis --out-dir dist
+        run: cargo packager --release --packages searchfile --formats nsis --out-dir dist
 
       - name: Package Application (macOS)
         if: matrix.os == 'macos-latest'
-        run: cargo packager --release --packages file-reader --formats dmg --out-dir dist
+        run: cargo packager --release --packages searchfile --formats dmg --out-dir dist
 
       - name: Package Application (Linux)
         if: matrix.os == 'ubuntu-latest'
-        run: cargo packager --release --packages file-reader --formats deb --out-dir dist
+        run: cargo packager --release --packages searchfile --formats deb --out-dir dist
 
       # FIX: Point the upload artifact step to target that precise "dist" directory
       - name: Upload Installer Artifacts
