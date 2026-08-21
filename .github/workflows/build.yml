@@ -38,12 +38,13 @@ jobs:
         run: cargo install cargo-packager --locked
 
       # FIX: Compile the Rust application first so the binary actually exists!
+            # This compiles the binary on the native machine host
       - name: Build Release Binary
         run: cargo build --release
 
-      # Now the packager will find the binary safely in target/release/
+      # This runs the packager by explicitly binding your clean binary name
       - name: Package Application
-        run: cargo packager --release
+        run: cargo packager --release --bin searchfile
 
       - name: Upload Installer Artifacts
         uses: actions/upload-artifact@v4
