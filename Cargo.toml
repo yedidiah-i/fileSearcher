@@ -9,14 +9,14 @@ ignore = "0.4"
 sysinfo ="0.30"
 
 [package.metadata.packager]
-product_name = "YourAppName"
+product_name = "File Reader"
 version = "0.1.0"
-description = "My Rust Application"
-authors = ["Your Name"]
+description = "This app searches for a file in your whole PC in mere milliseconds"
+authors = ["IRISHYURA Yedidiah"]
 formats = ["nsis", "dmg", "deb", "appimage"]
 
 [[package.metadata.packager.binaries]]
-name = "your_program_name"
+name = "searchfile"
 main = true
 
 [package.metadata.packager.nsis]

@@ -1,5 +1,5 @@
 [package]
-product_name = "IRISHYURA Yedidiah"
+product_name = "File Reader"
 version = "0.1.0"
 description = "This app searches for a file in your whole PC in mere milliseconds"
 authors = ["IRISHYURA Yedidiah"]
@@ -12,5 +12,4 @@ name = "seachfile"
 main = true
 
 [nsis]
-# This line creates the "All Users" vs "Just Me" box!
 display_installer_mode = "ForceChoice" 
