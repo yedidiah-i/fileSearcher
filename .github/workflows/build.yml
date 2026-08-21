@@ -41,28 +41,22 @@ jobs:
       - name: Build Release Binary
         run: cargo build --release
 
-      # FIX: Each OS runs its own specific native installer format
+      # FIX: Force the packager to save installers into a specific "dist" folder
       - name: Package Application (Windows)
         if: matrix.os == 'windows-latest'
-        run: cargo packager --release --packages file-reader --formats nsis
+        run: cargo packager --release --packages file-reader --formats nsis --out-dir dist
 
       - name: Package Application (macOS)
         if: matrix.os == 'macos-latest'
-        run: cargo packager --release --packages file-reader --formats dmg
+        run: cargo packager --release --packages file-reader --formats dmg --out-dir dist
 
       - name: Package Application (Linux)
         if: matrix.os == 'ubuntu-latest'
-        run: cargo packager --release --packages file-reader --formats deb,appimage
+        run: cargo packager --release --packages file-reader --formats deb --out-dir dist
 
-
-
+      # FIX: Point the upload artifact step to target that precise "dist" directory
       - name: Upload Installer Artifacts
         uses: actions/upload-artifact@v4
         with:
           name: installers-${{ matrix.os }}
-          # FIX: Added "**/*" to search deeply inside all subfolders
-          path: |
-            target/packager/**/*.exe
-            target/packager/**/*.dmg
-            target/packager/**/*.deb
-            target/packager/**/*.AppImage
+          path: dist/**/*
