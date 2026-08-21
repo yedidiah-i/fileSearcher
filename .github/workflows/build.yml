@@ -41,7 +41,6 @@ jobs:
       - name: Build Release Binary
         run: cargo build --release
 
-      # 2. Package it using the official plural packages flag
       - name: Package Application
         run: cargo packager --release --packages file-reader
 
