@@ -1,28 +1,38 @@
 # 🚀 searchfile
 
-This incredibly powerful application searches your entire PC for any file in mere milliseconds. It delivers unmatched, blazing-fast performance to ensure you find exactly what you need without waiting.
+**This incredibly powerful application searches your entire PC for any file in mere milliseconds. It delivers unmatched, blazing-fast performance to ensure you find exactly what you need without waiting.**
 
 ---
 
 ## 📥 How to Download the Installers
 
-Because this project automatically builds cross-platform installers in the cloud, you can grab the fresh application setup files directly from the **GitHub Actions** dashboard.
+Because anonymous visitors cannot access the GitHub Actions tab directly, all installer binaries are hosted openly on the public **Releases** pipeline.
 
-Follow these simple steps to download the correct file for your operating system:
+Follow these simple steps to download the correct setup package for your environment:
 
-1. Click on the **Actions** tab at the top of this GitHub repository page.
-2. Select the latest successful workflow run (the one with the green checkmark ✅ named **"Fix artifact path patterns..."** or similar).
-3. Scroll all the way down to the very bottom of that build summary page to find the **Artifacts** section.
-4. Download the specific `.zip` folder matching your operating system:
+1. Look at the right-hand sidebar of this repository homepage.
+2. Click on the latest version tag under the **Releases** header.
+3. Choose the appropriate installer package linked under the **Assets** list:
 
 ### 🪟 Windows
-* **Download**: `installers-windows-latest`
-* **Inside the Zip**: Open the folder and double-click the `.exe` setup wizard. It will ask if you want to install the app for "All Users" or "Just Me" to handle system permissions automatically.
+* **Package Format**: `searchfile_x64-setup.exe`
+* **Installation Step**: Launch the installer package. A dedicated choice menu will request an installation path option: Select **Install for All Users** to automatically configure elevated system environment properties, or choose **Just Me** to maintain private, local profile tracking.
 
 ### 🍏 macOS
-* **Download**: `installers-macos-latest`
-* **Inside the Zip**: Open the `.dmg` file and drag the application icon directly into your **Applications** folder.
+* **Package Format**: `searchfile_x64.dmg`
+* **Installation Step**: Mount the disk image container and drag the core application wrapper directly into your local **Applications** dashboard directory to enable global user profile discovery.
 
-### 🐧 Linux (Ubuntu/Debian)
-* **Download**: `installers-ubuntu-latest`
-* **Inside the Zip**: Double-click the native `.deb` package file to install the application system-wide using your built-in software manager.
+### 🐧 Linux (Ubuntu / Debian Distributions)
+* **Package Format**: `searchfile_amd64.deb`
+* **Installation Step**: Execute the packaged bundle via your standard apt software management loop (`sudo dpkg -i searchfile_amd64.deb`) to register the execution hooks natively inside the path line.
+
+---
+
+## ⚙️ Configuration Rules
+
+The search functionality defaults strictly to the configuration array mapped during compilation.
+
+### Case Sensitivity Rules
+The underlying path validation respects explicit environmental switches to coordinate text analysis states:
+* **Default Operation**: The tool defaults exclusively to being **case-insensitive** if no alternative instruction is provided.
+* **Force Strict Case Matching**: Define a local environment tracking variable (`IGNORE_CASE=1`) directly inside your user system dashboard configuration settings profile before firing execution triggers.
