@@ -37,6 +37,11 @@ jobs:
       - name: Install Cargo Packager CLI
         run: cargo install cargo-packager --locked
 
+      # FIX: Compile the Rust application first so the binary actually exists!
+      - name: Build Release Binary
+        run: cargo build --release
+
+      # Now the packager will find the binary safely in target/release/
       - name: Package Application
         run: cargo packager --release
 
