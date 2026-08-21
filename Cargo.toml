@@ -16,4 +16,4 @@ authors = ["IRISHYURA Yedidiah"]
 formats = ["nsis", "dmg", "deb", "appimage"]
 
 [package.metadata.packager.nsis]
-display_installer_mode = "ForceChoice"
+installer_mode = "ForceChoice"
