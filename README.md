@@ -1,14 +1,28 @@
-# fileSearcher
+# 🚀 searchfile
 
-**Basic Usage**  
-If using windows and want to get a search tool that finds your files in mere seconds this is the place. 
-Go to the **searchfile.exe** and download it.  
-Put it in the environment variables,
-you will be able to search for your whole PC a file that has that name or has a name that has about the same name
+This incredibly powerful application searches your entire PC for any file in mere milliseconds. It delivers unmatched, blazing-fast performance to ensure you find exactly what you need without waiting.
 
-**How is this done**  
-You can open terminal and then write  
-searchfile < filename > < StartingDirectory(path to directory) >  
-in mere seconds you will be able to 
-find it in mere seconds, if you want to search the whole PC, FEEL FREE NOT TO PUT ANYTHING IN PLACE OF < StartingDirectory >  
-**then BOOM!! your whole PC will work together to find the file** 
+---
+
+## 📥 How to Download the Installers
+
+Because this project automatically builds cross-platform installers in the cloud, you can grab the fresh application setup files directly from the **GitHub Actions** dashboard.
+
+Follow these simple steps to download the correct file for your operating system:
+
+1. Click on the **Actions** tab at the top of this GitHub repository page.
+2. Select the latest successful workflow run (the one with the green checkmark ✅ named **"Fix artifact path patterns..."** or similar).
+3. Scroll all the way down to the very bottom of that build summary page to find the **Artifacts** section.
+4. Download the specific `.zip` folder matching your operating system:
+
+### 🪟 Windows
+* **Download**: `installers-windows-latest`
+* **Inside the Zip**: Open the folder and double-click the `.exe` setup wizard. It will ask if you want to install the app for "All Users" or "Just Me" to handle system permissions automatically.
+
+### 🍏 macOS
+* **Download**: `installers-macos-latest`
+* **Inside the Zip**: Open the `.dmg` file and drag the application icon directly into your **Applications** folder.
+
+### 🐧 Linux (Ubuntu/Debian)
+* **Download**: `installers-ubuntu-latest`
+* **Inside the Zip**: Double-click the native `.deb` package file to install the application system-wide using your built-in software manager.
