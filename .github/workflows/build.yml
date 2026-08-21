@@ -60,8 +60,9 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: installers-${{ matrix.os }}
+          # FIX: Added "**/*" to search deeply inside all subfolders
           path: |
-            target/packager/*.exe
-            target/packager/*.dmg
-            target/packager/*.deb
-            target/packager/*.AppImage
+            target/packager/**/*.exe
+            target/packager/**/*.dmg
+            target/packager/**/*.deb
+            target/packager/**/*.AppImage
