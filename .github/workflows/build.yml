@@ -41,8 +41,18 @@ jobs:
       - name: Build Release Binary
         run: cargo build --release
 
-      - name: Package Application
-        run: cargo packager --release --packages file-reader
+      # FIX: Each OS runs its own specific native installer format
+      - name: Package Application (Windows)
+        if: matrix.os == 'windows-latest'
+        run: cargo packager --release --packages file-reader --formats nsis
+
+      - name: Package Application (macOS)
+        if: matrix.os == 'macos-latest'
+        run: cargo packager --release --packages file-reader --formats dmg
+
+      - name: Package Application (Linux)
+        if: matrix.os == 'ubuntu-latest'
+        run: cargo packager --release --packages file-reader --formats deb,appimage
 
 
 
