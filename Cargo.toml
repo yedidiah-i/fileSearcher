@@ -13,6 +13,7 @@ product_name = "searchfile"
 version = "0.1.0"
 description = "This app searches for a file in your whole PC in mere milliseconds"
 authors = ["IRISHYURA Yedidiah"]
+icons = ["filesearch.png"]
 
 [package.metadata.packager.nsis]
 installer_mode = "both"
