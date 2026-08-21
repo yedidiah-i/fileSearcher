@@ -7,3 +7,17 @@ edition = "2024"
 walkdir = "2.5"
 ignore = "0.4"
 sysinfo ="0.30"
+
+[package.metadata.packager]
+product_name = "YourAppName"
+version = "0.1.0"
+description = "My Rust Application"
+authors = ["Your Name"]
+formats = ["nsis", "dmg", "deb", "appimage"]
+
+[[package.metadata.packager.bin]]
+name = "your_program_name"
+main = true
+
+[package.metadata.packager.nsis]
+display_installer_mode = "ForceChoice"
