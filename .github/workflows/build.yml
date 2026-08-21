@@ -60,3 +60,24 @@ jobs:
         with:
           name: installers-${{ matrix.os }}
           path: dist/**/*
+  publish:
+    name: Create Public Release
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download All Artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: dist
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v${{ github.run_number }}
+          name: Release v${{ github.run_number }}
+          draft: false
+          prerelease: false
+          files: |
+            dist/installers-windows-latest/**/*
+            dist/installers-macos-latest/**/*
+            dist/installers-ubuntu-latest/**/*
